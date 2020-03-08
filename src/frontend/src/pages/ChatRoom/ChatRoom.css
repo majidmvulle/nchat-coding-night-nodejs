@@ -1,0 +1,20 @@
+.chatContainer {
+  margin: 0 !important;
+  height: calc(100vh - 64px);
+  max-height: calc(100vh - 64px);
+  max-width: 100%;
+}
+
+.guestList li > div {
+  padding: 10px;
+}
+
+.subheader {
+  background-color: #ffffff !important;
+}
+
+.guestListContainer {
+  max-height: calc(100vh - 64px);
+  overflow-x: scroll;
+  border-left: 1px solid #cacaca;
+}

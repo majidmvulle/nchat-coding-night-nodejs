@@ -106,5 +106,5 @@ dist
 .tern-port
 
 
-./src/frontend/node_modules
-./src/build
+src/frontend/node_modules
+src/frontend/build

@@ -9,16 +9,32 @@ export interface JoinProps {}
 const Join: React.SFC<JoinProps> = () => {
   const [roomID, setRoomID] = useState();
   const [userName, setUserName] = useState();
+  const [roomError, setRoomError] = useState(false);
+  const [userError, setuserError] = useState(false);
 
   const submit = () => {
+    if (!roomID || roomID === "") {
+      setRoomError(true);
+    } else {
+      setRoomError(false);
+    }
+
+    if (!userName || userName === "") {
+      setuserError(true);
+    } else {
+      setuserError(false);
+    }
+
     console.log(roomID, userName); // TODO;
   };
+
   return (
     <div>
       <Header title="Join Chat Room" />
       <form className="createForm" autoComplete="off">
         <Box mb={3} width={360}>
           <TextField
+            error={roomError}
             fullWidth
             id="roomID"
             label="Room ID"
@@ -28,6 +44,7 @@ const Join: React.SFC<JoinProps> = () => {
         </Box>
         <Box mb={3} width={360}>
           <TextField
+            error={userError}
             fullWidth
             id="userName"
             label="User Name"

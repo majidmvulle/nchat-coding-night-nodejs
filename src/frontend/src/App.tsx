@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 //Pages
@@ -12,6 +12,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/chat">
+          <ChatRoom />
+        </Route>
         <Route path="/join">
           <Join />
         </Route>
