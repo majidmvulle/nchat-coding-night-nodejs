@@ -1,0 +1,27 @@
+{
+  "name": "nchat-coding-night-nodejs",
+  "version": "0.0.1",
+  "description": "Node.js Code Night x Nodes Dubai",
+  "main": "src/index.ts",
+  "repository": "git@github.com:majidmvulle/nchat-coding-night-nodejs.git",
+  "author": "Majid Mvulle <mamv@nodesagency.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.3",
+    "@types/node": "^13.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "dev": "nodemon --watch ./src --ext ts --exec ts-node --ignore '*.test.ts' --delay 2 ./src/index.ts"
+  }
+}

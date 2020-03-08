@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  nchat-nodejs:
+    image: nchat-nodejs:latest
+    container_name: nchat-nodejs
+    hostname: nchat-nodejs-container
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - nchat-nodejs-app-network
+networks:
+  nchat-nodejs-app-network:
+    driver: bridge
