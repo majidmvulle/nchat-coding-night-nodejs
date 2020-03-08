@@ -11,10 +11,10 @@ app.get('/', function (request: express.Request, response: express.Response) {
   response.sendFile(__dirname + '/frontend/index.html');
 });
 
-io.on('connection', function (socket:Socket) {
+io.on('connection', function (socket: Socket) {
   console.log('someone connected');
 
-  socket.broadcast.emit('Hi, Welcome to nChat - Nodes x NodeJS Coding Night');
+  socket.broadcast.emit('dhg', 'Hi, Welcome to nChat - Nodes x NodeJS Coding Night');
 
   socket.on('chat message', function(msg){
     console.log('Message: ' + msg);
