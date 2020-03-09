@@ -3,14 +3,18 @@ import Header from "../../components/Header/Header";
 import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import API from "../../services/api";
+import { useHistory } from "react-router-dom";
 
 export interface JoinProps {}
 
 const Join: React.SFC<JoinProps> = () => {
   const [roomID, setRoomID] = useState();
   const [userName, setUserName] = useState();
+  const [password, setPassword] = useState();
   const [roomError, setRoomError] = useState(false);
   const [userError, setuserError] = useState(false);
+  const history = useHistory();
 
   const submit = () => {
     if (!roomID || roomID === "") {
@@ -24,6 +28,20 @@ const Join: React.SFC<JoinProps> = () => {
     } else {
       setuserError(false);
     }
+
+    if (roomID && userName && password) {
+      API.post(`/rooms/${roomID}/join`, {
+        username: userName,
+        password: password
+      }).then(response => {
+        console.log(response);
+        if (response.status === 200) {
+          history.push(`chat/${response.data.code}`);
+        }
+      });
+    }
+
+    // API.get(``)
 
     console.log(roomID, userName); // TODO;
   };
@@ -50,6 +68,16 @@ const Join: React.SFC<JoinProps> = () => {
             label="User Name"
             variant="outlined"
             onChange={event => setUserName(event.target.value)}
+          />
+        </Box>
+        <Box mb={3} width={360}>
+          <TextField
+            fullWidth
+            id="password"
+            label="Password"
+            variant="outlined"
+            type="password"
+            onChange={event => setPassword(event.target.value)}
           />
         </Box>
         <Box>

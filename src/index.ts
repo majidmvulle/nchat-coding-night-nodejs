@@ -6,6 +6,8 @@ import path from 'path';
 import ApiRouter from './backend/routes/api';
 import http from 'http';
 import SocketIO, {Socket} from "socket.io";
+import cors from "cors";
+
 
 const app = express();
 const server = http.createServer(app);
@@ -15,6 +17,8 @@ const port = 8080;
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
+
 app.use('/api', ApiRouter);
 
 const viewsDir = path.join(__dirname, 'views');
@@ -26,12 +30,7 @@ app.get('*', (req: Request, res: Response) => {
     res.sendFile('index.html', {root: viewsDir});
 });
 
-server.listen(port,  () => {
-  console.log(`Server running at ${port}/`);
-});
-
-/**
-io.on('connection', function (socket:Socket) {
+io.on('connection', function (socket: Socket) {
   console.log('someone connected');
 
   socket.broadcast.emit('Hi, Welcome to nChat - Nodes x NodeJS Coding Night');
@@ -45,4 +44,7 @@ io.on('connection', function (socket:Socket) {
     console.log('user disconnected');
   });
 });
- */
+
+server.listen(port,  () => {
+  console.log(`Server running at ${port}/`);
+});

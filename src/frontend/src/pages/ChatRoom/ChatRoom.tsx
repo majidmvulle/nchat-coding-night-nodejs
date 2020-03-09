@@ -7,7 +7,7 @@ import ChatBox from "./ChatBox/ChatBox";
 
 export interface ChatRoomProps {}
 
-const ChatRoom: React.SFC<ChatRoomProps> = () => {
+const ChatRoom: React.SFC<ChatRoomProps> = props => {
   const [messages, setMessages] = useState([]);
 
   const addMessage = (message: any[]) => {
@@ -27,11 +27,10 @@ const ChatRoom: React.SFC<ChatRoomProps> = () => {
       <Header title="Chat Room" />
       <Grid className="chatContainer" container spacing={3}>
         <Grid item xs={9}>
-          {console.log(messages)}
           <ChatBox sendMessage={sendMessage} messages={messages} />
         </Grid>
         <Grid className="guestListContainer" item xs={3}>
-          <Guests />
+          <Guests {...props} />
         </Grid>
       </Grid>
     </>
