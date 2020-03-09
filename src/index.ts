@@ -3,7 +3,7 @@ import express from 'express';
 import { Request, Response } from 'express';
 import logger from 'morgan';
 import path from 'path';
-import ApiRouter from './routes/api';
+import ApiRouter from './backend/routes/api';
 import http from 'http';
 import SocketIO, {Socket} from "socket.io";
 

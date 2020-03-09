@@ -105,6 +105,7 @@ dist
 # TernJS port file
 .tern-port
 
-
-./src/frontend/node_modules
-./src/build
+src/frontend/node_modules
+src/frontend/build
+src/backend/db/database
+!src/backend/db/database/.gitkeep
