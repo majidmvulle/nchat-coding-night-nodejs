@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/chat">
+        <Route path="/chat/:id">
           <ChatRoom />
         </Route>
         <Route path="/join">
