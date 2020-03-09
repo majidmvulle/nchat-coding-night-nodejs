@@ -3,6 +3,7 @@ import Box from "@material-ui/core/Box";
 import TextField from "@material-ui/core/TextField";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
+import Moment from "react-moment";
 
 export interface ChatBoxProps {
   sendMessage: Function;
@@ -20,6 +21,7 @@ const ChatBox: React.SFC<ChatBoxProps> = props => {
             return (
               <Box key={index} mb={2}>
                 <Chip avatar={<Avatar>M</Avatar>} label={message} />
+                <Moment className="time" fromNow>2020-02-19T12:59-0500</Moment>
               </Box>
             );
           })}
