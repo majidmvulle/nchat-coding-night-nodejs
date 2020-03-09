@@ -16,7 +16,7 @@ const ChatRoom: React.SFC<ChatRoomProps> = () => {
   };
 
   const sendMessage = (event: any) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && event.target.value !== "") {
       // console.log(event.target.value);
       addMessage(event.target.value);
     }
