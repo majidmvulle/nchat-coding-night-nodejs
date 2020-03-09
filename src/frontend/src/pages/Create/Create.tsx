@@ -10,8 +10,21 @@ export interface CreateProps {}
 const Create: React.SFC<CreateProps> = () => {
   const [roomName, setRoomName] = useState();
   const [userName, setUserName] = useState();
+  const [roomError, setRoomError] = useState(false);
+  const [userError, setuserError] = useState(false);
 
   const submit = () => {
+    if (!roomName || roomName === "") {
+      setRoomError(true);
+    } else {
+      setRoomError(false);
+    }
+
+    if (!userName || userName === "") {
+      setuserError(true);
+    } else {
+      setuserError(false);
+    }
     console.log(roomName, userName); // TODO;
   };
 
@@ -21,6 +34,7 @@ const Create: React.SFC<CreateProps> = () => {
       <form className="createForm" autoComplete="off">
         <Box mb={3} width={360}>
           <TextField
+            error={roomError}
             fullWidth
             id="roomName"
             label="Room Name"
@@ -30,6 +44,7 @@ const Create: React.SFC<CreateProps> = () => {
         </Box>
         <Box mb={3} width={360}>
           <TextField
+            error={userError}
             fullWidth
             id="userName"
             label="User Name"

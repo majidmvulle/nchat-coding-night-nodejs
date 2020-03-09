@@ -1,0 +1,79 @@
+.chatContainer {
+  margin: 0 !important;
+  height: calc(100vh - 64px);
+  max-height: calc(100vh - 64px);
+  max-width: 100%;
+}
+
+.guestList li > div {
+  padding: 10px;
+}
+
+.subheader {
+  background-color: #ffffff !important;
+}
+
+.guestListContainer {
+  max-height: calc(100vh - 64px);
+  overflow-x: scroll;
+  border-left: 1px solid #cacaca;
+}
+
+.chatTextarea {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.chatArea {
+  position: relative;
+  height: calc(100vh - 90px);
+  max-height: calc(100vh - 90px);
+}
+
+.chatMessages {
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 20px;
+  height: calc(100vh - 190px);
+  max-height: calc(100vh - 190px);
+  overflow-y: scroll;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.time {
+  font-size: 12px;
+  margin-left: 10px;
+  color: #666;
+}
+
+.topBar {
+  position: absolute;
+  background: #666;
+  left: 0;
+  width: 100%;
+  top: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 8px 8px 0 0;
+  z-index: 12;
+}
+
+.chipContainer > div {
+  max-width: 100%;
+  height: fit-content;
+  min-height: 32px;
+  padding: 10px 0;
+  border-radius: 22px;
+}
+
+.chipContainer > div > span {
+  text-overflow: initial;
+  overflow: initial;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
